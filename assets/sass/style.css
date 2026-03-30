@@ -6393,6 +6393,7 @@ p {
 .scroll__slider ul {
   padding: 0;
   margin: 0;
+  list-style: none;
   display: flex;
 }
 .scroll__slider ul li {
