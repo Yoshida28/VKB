@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="description" content="Engineering &amp; Construction Services"/>
 	<meta name="keywords" content="Creative, Digital, multipage, landing, freelancer template"/>
-	<meta name="author" content="cognivo futue technologies">
+	<meta name="author" content="Cognivo Future Technologies">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Title of Site -->
 	<title>Engineering &amp; Construction Services</title>
@@ -58,7 +58,7 @@
 				</div>
 				<div class="header__area-menubar-right-sidebar-popup-contact-item-content">
 					<span>Phone:</span>
-					<h6><a href="tel:9344393610">9344393610, 9443319810</a></h6>
+					<h6><a href="tel:9344393610">9344393610,9443319810</a></h6>
 				</div>
 			</div>
 			<div class="header__area-menubar-right-sidebar-popup-contact-item">
@@ -183,7 +183,7 @@
                                 </div>
                                 <div class="contact__area-left-contact-item-content">
                                     <span>Phone:</span>
-                                    <h6><a href="tel:9344393610">9344393610, 9443319810</a></h6>
+                                    <h6><a href="tel:9344393610">9344393610,9443319810</a></h6>
                                 </div>
                             </div>
                             <div class="contact__area-left-contact-item">
@@ -210,31 +210,32 @@
                 <div class="col-lg-7 wow fadeInRight" data-wow-delay=".4s">
                     <div class="contact__area-form">
                         <h4>Send Message</h4>
-                        <form action="#">
+                        <div id="contact-status" style="display:none; padding: 15px; margin-bottom: 20px; border-radius: 4px;"></div>
+                        <form id="contactForm" method="POST" action="">
 							<div class="row">
 								<div class="col-md-6 mb-25">
 									<div class="contact__form-area-item">
-										<input type="text" name="name" placeholder="Full Name" required="required">
+										<input type="text" name="name" id="contact-name" placeholder="Full Name" required="required">
 									</div>
 								</div>
 								<div class="col-md-6 md-mb-25">
 									<div class="contact__form-area-item">
-										<input type="email" name="email" placeholder="Email Address" required="required">
+										<input type="email" name="email" id="contact-email" placeholder="Email Address" required="required">
 									</div>
 								</div>
 								<div class="col-md-12 mb-25">
 									<div class="contact__form-area-item">
-										<input type="text" name="subject" placeholder="Subject">
+										<input type="text" name="subject" id="contact-subject" placeholder="Subject">
 									</div>
 								</div>
 								<div class="col-md-12 mb-25">
 									<div class="contact__form-area-item">
-										<textarea name="message" placeholder="Message"></textarea>
+										<textarea name="message" id="contact-message" placeholder="Message" required="required"></textarea>
 									</div>
 								</div>
 								<div class="col-md-12">
 									<div class="contact__form-area-item">
-										<button class="build_button" type="submit">Submit Message <i class="flaticon-right-up"></i></button>
+										<button class="build_button" type="submit" id="contact-submit">Submit Message <i class="flaticon-right-up"></i></button>
 									</div>
 								</div>
 							</div>
@@ -251,7 +252,7 @@
             <div class="row">
                 <div class="col-xl-12 wow fadeInUp" data-wow-delay=".4s">
                     <div class="map-area">
-                        <iframe loading="lazy" src="https://maps.google.com/maps?q=London%20Eye%2C%20London%2C%20United%20Kingdom&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" title="London Eye, London, United Kingdom" aria-label="London Eye, London, United Kingdom"></iframe>
+                        <iframe loading="lazy" src="https://maps.google.com/maps?q=Kaveena+builders+JPQM%2B2WV+Sipcot+Cuddalore+Tamil+Nadu+607005&amp;t=m&amp;z=15&amp;output=embed&amp;iwloc=near" title="Kaveena Builders, Sipcot, Cuddalore, Tamil Nadu" aria-label="Kaveena Builders, Sipcot, Cuddalore, Tamil Nadu" allowfullscreen="" allow="fullscreen"></iframe>
                     </div>
                 </div>
             </div>
@@ -291,8 +292,8 @@
 								<div class="footer__one-widget address">
 									<h4>Address</h4>
 									<div class="footer__one-widget-address">
-										<h6><a href="https://www.google.com/maps">3891 Ranch view Richardson, California 62639</a></h6>
-										<h4><a href="tel:9344393610">9344393610, 9443319810</a></h4>
+										<h6><a href="https://www.google.com/maps">Kaveena builders office, JPQM+2WV, Sipcot, Cuddalore, Tamil Nadu 607005</a></h6>
+										<h4><a href="tel:9344393610">9344393610,9443319810</a></h4>
 									</div>
 								</div>
 							</div>
@@ -303,7 +304,7 @@
 										<ul>
 											<li><a href="about.html">About Us</a></li>
 											<li><a href="testimonial.html">Testimonials</a></li>
-											<li><a href="contact-two.html">Contact Us</a></li>
+											<li><a href="contact.html">Contact Us</a></li>
 										</ul>
 									</div>
 								</div>
@@ -313,8 +314,8 @@
 									<h4>Support</h4>
 									<div class="footer-widget-menu">
 										<ul>
-											<li><a href="contact-two.html">Term & Conditions</a></li>
-											<li><a href="contact-two.html">Privacy policy</a></li>
+											<li><a href="contact.html">Term & Conditions</a></li>
+											<li><a href="contact.html">Privacy policy</a></li>
 										</ul>
 									</div>
 								</div>
@@ -382,6 +383,61 @@
 	<script src="assets/js/split-text.js"></script>
 	<!-- Custom JS -->
 	<script src="assets/js/custom.js"></script>
+	<!-- Contact Form Handler -->
+	<script>
+	document.getElementById('contactForm').addEventListener('submit', async function(e) {
+		e.preventDefault();
+
+		const submitBtn = document.getElementById('contact-submit');
+		const statusDiv = document.getElementById('contact-status');
+		const originalText = submitBtn.innerHTML;
+
+		submitBtn.innerHTML = 'Sending... <i class="flaticon-right-up"></i>';
+		submitBtn.disabled = true;
+		statusDiv.style.display = 'none';
+
+		const data = {
+			name: document.getElementById('contact-name').value.trim(),
+			email: document.getElementById('contact-email').value.trim(),
+			subject: document.getElementById('contact-subject').value.trim(),
+			message: document.getElementById('contact-message').value.trim()
+		};
+
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(data)
+			});
+
+			const result = await response.json();
+
+			if (result.success) {
+				statusDiv.style.display = 'block';
+				statusDiv.style.background = '#d4edda';
+				statusDiv.style.color = '#155724';
+				statusDiv.style.border = '1px solid #c3e6cb';
+				statusDiv.textContent = result.message;
+				this.reset();
+			} else {
+				statusDiv.style.display = 'block';
+				statusDiv.style.background = '#f8d7da';
+				statusDiv.style.color = '#721c24';
+				statusDiv.style.border = '1px solid #f5c6cb';
+				statusDiv.textContent = result.error;
+			}
+		} catch (err) {
+			statusDiv.style.display = 'block';
+			statusDiv.style.background = '#f8d7da';
+			statusDiv.style.color = '#721c24';
+			statusDiv.style.border = '1px solid #f5c6cb';
+			statusDiv.textContent = 'Network error. Please try again or email us directly at Kaveenabuilders@gmail.com';
+		}
+
+		submitBtn.innerHTML = originalText;
+		submitBtn.disabled = false;
+	});
+	</script>
 </body>
 
 </html>

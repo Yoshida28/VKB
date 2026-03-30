@@ -3288,6 +3288,7 @@ p {
 }
 .header__area-menubar-right-sidebar-popup-logo a img {
   max-width: 170px;
+  filter: brightness(0) invert(1);
 }
 .header__area-menubar-right-sidebar-popup p {
   color: var(--color-6);
@@ -6393,7 +6394,6 @@ p {
 .scroll__slider ul {
   padding: 0;
   margin: 0;
-  list-style: none;
   display: flex;
 }
 .scroll__slider ul li {

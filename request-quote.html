@@ -58,7 +58,7 @@
 				</div>
 				<div class="header__area-menubar-right-sidebar-popup-contact-item-content">
 					<span>Phone:</span>
-					<h6><a href="tel:9344393610">9344393610, 9443319810</a></h6>
+					<h6><a href="tel:9344393610">9344393610,9443319810</a></h6>
 				</div>
 			</div>
 			<div class="header__area-menubar-right-sidebar-popup-contact-item">
@@ -122,19 +122,20 @@
                             <li><a href="about.html">About Us</a></li>
                             <li class="menu-item-has-children"><a href="services.html">Services</a>
                                 <ul class="sub-menu">
-
                                     <li><a href="services.html">Service Overview</a></li>
                                     <li><a href="services-details.html">Services Details</a></li>
                                 </ul>
                             </li>
                             <li><a href="faq.html">FAQ's</a></li>
-
-
+                            
+                            
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul></div>
 				</div>
 				<div class="header__area-menubar-right">
-
+					<div class="header__area-menubar-right-btn one">
+						<a class="build_button" href="request-quote.html">Get Started<i class="flaticon-right-up"></i></a>
+					</div>
 					<div class="header__area-menubar-right-sidebar">
 						<div class="header__area-menubar-right-sidebar-icon">
 							<i class="flaticon-menu-6"></i>
@@ -169,79 +170,65 @@
     <div class="request__quote section-padding-three">
         <div class="container">
             <div class="row">
-                <div class="col-xl-12">
-                    <form action="#">
+				<div class="col-xl-12">
+					<div id="quote-status" style="display:none; padding: 15px; margin-top: 20px; border-radius: 4px;"></div>
+					<form id="quoteForm" method="POST" action="">
                         <div class="row">
                             <div class="col-md-6 mt-30">
                                 <div class="request__quote-item">
-                                    <label>First Name<span> *</span></label>
-                                    <input type="text" name="name" placeholder="First" required>
+									<label>Full Name<span> *</span></label>
+									<input type="text" name="name" id="quote-name" placeholder="Your full name" required>
                                 </div>
                             </div>
                             <div class="col-md-6 mt-30">
                                 <div class="request__quote-item">
-                                    <label>Last Name</label>
-                                    <input type="text" placeholder="Last">
+									<label>Email Address<span> *</span></label>
+									<input type="email" name="email" id="quote-email" placeholder="you@example.com" required>
                                 </div>
                             </div>
                             <div class="col-md-6 mt-30">
                                 <div class="request__quote-item">
-                                    <label>Email Address<span> *</span></label>
-                                    <input type="email" placeholder="Email" required>
+									<label>Phone Number<span> *</span></label>
+									<input type="text" name="phone" id="quote-phone" placeholder="9344393610 / 9443319810" required>
                                 </div>
                             </div>
                             <div class="col-md-6 mt-30">
                                 <div class="request__quote-item">
-                                    <label>Number<span> *</span></label>
-                                    <input type="text" placeholder="+9344393610 / +9443319810" required>
+									<label>Company / Organization</label>
+									<input type="text" name="company" id="quote-company" placeholder="Company name">
                                 </div>
                             </div>
                             <div class="col-md-6 mt-30">
                                 <div class="request__quote-item">
-                                    <label>Company/Organization<span> *</span></label>
-                                    <input type="text" placeholder="Envato" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mt-30">
-                                <div class="request__quote-item">
-                                    <label>Website<span> *</span></label>
-                                    <input type="text" placeholder="http://envato.com" required>
+									<label>Project Location</label>
+									<input type="text" name="location" id="quote-location" placeholder="City / Site location">
                                 </div>
                             </div>
                             <div class="col-md-12 mt-30">
                                 <p class="mb-10">What services can we provide you?<span> *</span></p>
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="request__quote-services">
-                                            <label><input class="mr-10" type="checkbox">Optimization (SEO)</label>
-                                            <label><input class="mr-10" type="checkbox">Web Design</label>
-                                            <label><input class="mr-10" type="checkbox">Web Hosting / Maintenance</label>
+											<label><input class="mr-10 quote-service" type="checkbox" value="Civil Construction Services">Civil Construction Services</label>
+											<label><input class="mr-10 quote-service" type="checkbox" value="Industrial Services">Industrial Services</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="request__quote-services">
-                                            <label><input class="mr-10" type="checkbox">Content Writing</label>
-                                            <label><input class="mr-10" type="checkbox">Search Engine Marketing</label>
-                                            <label><input class="mr-10" type="checkbox">Social Media</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="request__quote-services">
-                                            <label><input class="mr-10" type="checkbox">ADA Compliance</label>
-                                            <label><input class="mr-10" type="checkbox">Photography / Video</label>
-                                            <label><input class="mr-10" type="checkbox">Email Marketing</label>
+											<label><input class="mr-10 quote-service" type="checkbox" value="Manpower Supply">Manpower Supply</label>
+											<label><input class="mr-10 quote-service" type="checkbox" value="Electrical Services">Electrical Services</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12 mt-30">
                                 <div class="request__quote-item">
-                                    <label>Message<span> *</span></label>
-                                    <textarea name="message"></textarea>
+									<label>Project Details<span> *</span></label>
+									<textarea name="message" id="quote-message" placeholder="Tell us your project scope, timeline, and key requirements." required></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12">
-                                <button class="build_button mt-30" type="submit">Submit Now<i class="flaticon-right-up"></i></button>
+								<button class="build_button mt-30" type="submit" id="quote-submit">Submit Request<i class="flaticon-right-up"></i></button>
                             </div>
                         </div>
                     </form>
@@ -283,8 +270,8 @@
 								<div class="footer__one-widget address">
 									<h4>Address</h4>
 									<div class="footer__one-widget-address">
-										<h6><a href="https://www.google.com/maps">3891 Ranch view Richardson, California 62639</a></h6>
-										<h4><a href="tel:9344393610">9344393610, 9443319810</a></h4>
+										<h6><a href="https://www.google.com/maps">Kaveena builders office, JPQM+2WV, Sipcot, Cuddalore, Tamil Nadu 607005</a></h6>
+										<h4><a href="tel:9344393610">9344393610,9443319810</a></h4>
 									</div>
 								</div>
 							</div>
@@ -295,7 +282,7 @@
 										<ul>
 											<li><a href="about.html">About Us</a></li>
 											<li><a href="testimonial.html">Testimonials</a></li>
-											<li><a href="contact-two.html">Contact Us</a></li>
+											<li><a href="contact.html">Contact Us</a></li>
 										</ul>
 									</div>
 								</div>
@@ -305,8 +292,8 @@
 									<h4>Support</h4>
 									<div class="footer-widget-menu">
 										<ul>
-											<li><a href="contact-two.html">Term & Conditions</a></li>
-											<li><a href="contact-two.html">Privacy policy</a></li>
+											<li><a href="contact.html">Term & Conditions</a></li>
+											<li><a href="contact.html">Privacy policy</a></li>
 										</ul>
 									</div>
 								</div>
@@ -374,6 +361,77 @@
 	<script src="assets/js/split-text.js"></script>
 	<!-- Custom JS -->
 	<script src="assets/js/custom.js"></script>
+	<!-- Quote Form Handler -->
+	<script>
+	document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+		e.preventDefault();
+
+		const submitBtn = document.getElementById('quote-submit');
+		const statusDiv = document.getElementById('quote-status');
+		const originalText = submitBtn.innerHTML;
+
+		const selectedServices = Array.from(document.querySelectorAll('.quote-service:checked')).map(function(item) {
+			return item.value;
+		});
+
+		if (selectedServices.length === 0) {
+			statusDiv.style.display = 'block';
+			statusDiv.style.background = '#f8d7da';
+			statusDiv.style.color = '#721c24';
+			statusDiv.style.border = '1px solid #f5c6cb';
+			statusDiv.textContent = 'Please select at least one service.';
+			return;
+		}
+
+		submitBtn.innerHTML = 'Submitting... <i class="flaticon-right-up"></i>';
+		submitBtn.disabled = true;
+		statusDiv.style.display = 'none';
+
+		const data = {
+			name: document.getElementById('quote-name').value.trim(),
+			email: document.getElementById('quote-email').value.trim(),
+			phone: document.getElementById('quote-phone').value.trim(),
+			company: document.getElementById('quote-company').value.trim(),
+			location: document.getElementById('quote-location').value.trim(),
+			services: selectedServices,
+			message: document.getElementById('quote-message').value.trim()
+		};
+
+		try {
+			const response = await fetch('/api/quote', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(data)
+			});
+
+			const result = await response.json();
+
+			if (result.success) {
+				statusDiv.style.display = 'block';
+				statusDiv.style.background = '#d4edda';
+				statusDiv.style.color = '#155724';
+				statusDiv.style.border = '1px solid #c3e6cb';
+				statusDiv.textContent = result.message;
+				this.reset();
+			} else {
+				statusDiv.style.display = 'block';
+				statusDiv.style.background = '#f8d7da';
+				statusDiv.style.color = '#721c24';
+				statusDiv.style.border = '1px solid #f5c6cb';
+				statusDiv.textContent = result.error || 'Unable to submit your request at this time.';
+			}
+		} catch (err) {
+			statusDiv.style.display = 'block';
+			statusDiv.style.background = '#f8d7da';
+			statusDiv.style.color = '#721c24';
+			statusDiv.style.border = '1px solid #f5c6cb';
+			statusDiv.textContent = 'Network error. Please try again or call us at 9344393610.';
+		}
+
+		submitBtn.innerHTML = originalText;
+		submitBtn.disabled = false;
+	});
+	</script>
 </body>
 
 </html>
